@@ -26,7 +26,7 @@ class CustomModelForm(ModelFormWidget):
         formtype = self.select_form.objects.first() if self.select_form.objects else None
 
         if formtype:
-            custom_form_app = CustomForm(form_type=formtype)
+            custom_form_app = CustomForm(custom_form=formtype)
             self.customized_form.value = custom_form_app
             self._custom_form_app_id = custom_form_app.uid
             self._custom_form_app = custom_form_app
@@ -58,6 +58,19 @@ class CustomModelForm(ModelFormWidget):
             custom_form_app.load_custom_form(self.model_object)
 
 
+    def validate_object(self, obj):
+        obj = super().validate_object(obj)
+
+        formtype = self.select_form.objects.first()
+        if formtype is not None:
+            if self._custom_form_app_id:
+                custom_form_app = PyFormsMiddleware.get_instance(self._custom_form_app_id)
+                custom_form_app.validate_custom_form(self.model_object)
+
+        return obj
+
+
+
     def save_event(self, obj, new_object):
         res = super().save_event(obj, new_object)
         self.save_custom_model_form()
@@ -70,7 +83,7 @@ class CustomModelForm(ModelFormWidget):
         formobj = FormObject.objects.filter(content_type=ctype, object_id=pk).first()
 
         if formobj:
-            self.select_form.value = formobj.form_type.pk
+            self.select_form.value = formobj.custom_form.pk
 
         self.load_custom_model_form()
         return res

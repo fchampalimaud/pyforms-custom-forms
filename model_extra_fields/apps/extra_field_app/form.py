@@ -17,7 +17,6 @@ class ExtraFieldApp(ModelFormWidget):
         '_parms'
     ]
 
-
     def __init__(self, *args, **kwargs):
         self._parmsapp_uid = None
 

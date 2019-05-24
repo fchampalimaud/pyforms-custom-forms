@@ -11,7 +11,7 @@ class Form(models.Model):
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.form_name
+        return self.form_title
 
     class Meta:
         unique_together = [

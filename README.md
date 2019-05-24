@@ -31,6 +31,8 @@ Execute the django migrations
 
 ## Usage
 
+### Coding
+
 For this explanation we are going to use the next pyforms application as example.
 This application is used to manage the django **Expense** model.
 
@@ -74,5 +76,31 @@ class ExpenseForm(CustomModelForm):
     ]
 ```
 
-### Print screen examples
+### Forms configuration
 
+![Menu](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/user-menu.png)
+
+Select the application **Custom forms**.
+
+![Add custom form](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/add-custom-form.png)
+
+Create the forms you need and associate them to a Content Type. Then this form will start being available when editing a object from the selected content type.
+
+![Edit the custom form](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/edit-custom-form.png)
+
+To each custom form you can associate several fields from diferent types. These fields can be customized as it is show in the image bellow.
+
+![Edit a field](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/edit-field.png)
+
+
+### Result
+
+First ExpenseForm app inherit from the ModelFormWidget class.
+
+![ModelFormWidget](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/model_form_widget.png)
+
+
+Second ExpenseForm app inherit from the CustomModelForm class.
+On this app it is possible to visualise the [Extra information] control which allow the user to select the form with the extra fields he wiches to complete.
+
+![CustomModelForm](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/custom_model_form.png)

@@ -7,10 +7,10 @@ class FieldValue(models.Model):
     form_object = models.ForeignKey('FormObject', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'Form:{self.formtype_object} | Field:{self.formtype_field}  | Value:{self.value} '
+        return f'Form:{self.form_object} | Field:{self.field}  | Value:{self.value} '
 
 
     class Meta:
         unique_together = [
-            ('formtype_field', 'formtype_object')
+            ('field', 'form_object')
         ]

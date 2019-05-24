@@ -26,3 +26,8 @@ class ExtraField(models.Model):
         parms   = eval(self.field_parms)
         control = eval(self.field_type)(**parms)
         return control
+
+    @property
+    def label(self):
+        parms = eval(self.field_parms)
+        return parms['label']
