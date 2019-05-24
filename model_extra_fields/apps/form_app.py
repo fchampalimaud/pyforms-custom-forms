@@ -45,6 +45,6 @@ class FormApp(ModelAdminWidget):
     ORQUESTRA_MENU_ICON     = 'window restore'
     ORQUESTRA_MENU_ORDER    = 0
 
-    #AUTHORIZED_GROUPS = ['superuser']
+    AUTHORIZED_GROUPS = ['superuser']
 
 
