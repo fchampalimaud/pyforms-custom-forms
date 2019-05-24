@@ -1,14 +1,11 @@
 # Pyforms custom forms
 
-The library offers the functionality to add dynamic extra fields to the Pyforms applications.
+The library implements the functionality to add dynamic extra fields to the Pyforms Web
+applications.
 
 &nbsp;
 
 ## Usage
-
-&nbsp;
-
-### Coding
 
 For this explanation we are going to use the next pyforms application as example.
 This application is used to manage the django **Expense** model.
@@ -55,17 +52,23 @@ class ExpenseForm(CustomModelForm):
 
 ### Forms configuration
 
+The next steps demonstrates how to configure extra custom fields.
+
+First select the application **Custom forms** on the user menu.
+
 ![Menu](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/user-menu.png)
 
-Select the application **Custom forms**.
+Create the forms you need and associate them to a Content Type.\
+These forms will be available when editing an object from the selected content type.
 
 ![Add custom form](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/add-custom-form.png)
 
-Create the forms you need and associate them to a Content Type. Then this form will start being available when editing a object from the selected content type.
+The **Formset** field configures the organization of the configured extra fields, ala Pyforms.
 
 ![Edit the custom form](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/edit-custom-form.png)
 
-To each custom form you can associate several fields from diferent types. These fields can be customized as it is show in the image bellow.
+To each custom form you can associate several fields from diferent types.\
+These fields can be customized as it is show in the image bellow.
 
 ![Edit a field](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/edit-field.png)
 
