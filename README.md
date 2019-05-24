@@ -2,32 +2,8 @@
 
 The library offers the functionality to add dynamic extra fields to the Pyforms applications.
 
-
-## Install & configure
-
-Clone the repository
-```python
-> git clone git@github.com:fchampalimaud/pyforms-custom-forms.git
-```
-
-Install the library
-```python
-> pip install ./pyforms-custom-form
-```
-
-Add the app to the django settings.py
-```python
-INSTALLED_APPS = [
-    ...
-    'model_extra_fields',
-    ...
-]
-```
-
-Execute the django migrations
-```shell
-> python manage.py migrate model_extra_fields
-```
+\
+&nbsp;
 
 ## Usage
 
@@ -104,3 +80,31 @@ Second ExpenseForm app inherit from the CustomModelForm class.
 On this app it is possible to visualise the [Extra information] control which allow the user to select the form with the extra fields he wiches to complete.
 
 ![CustomModelForm](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/custom_model_form.png)
+
+
+
+## Install & configure
+
+Clone the repository
+```python
+> git clone git@github.com:fchampalimaud/pyforms-custom-forms.git
+```
+
+Install the library
+```python
+> pip install ./pyforms-custom-form
+```
+
+Add the app to the django settings.py
+```python
+INSTALLED_APPS = [
+    ...
+    'model_extra_fields',
+    ...
+]
+```
+
+Execute the django migrations
+```shell
+> python manage.py migrate model_extra_fields
+```
