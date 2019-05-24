@@ -21,6 +21,6 @@ setup(
     author='Ricardo Ribeiro',
     author_email='ricardo.ribeiro@research.fchampalimaud.org',
     license='MIT',
-    packages=['custom_forms'],
+    packages=['model_extra_fields'],
     include_package_data=True,
 )
