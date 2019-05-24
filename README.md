@@ -85,7 +85,7 @@ On this app it is possible to visualise the [Extra information] control which al
 
 ![CustomModelForm](https://raw.githubusercontent.com/fchampalimaud/pyforms-custom-forms/master/docs/images/custom_model_form.png)
 
-
+&nbsp;
 
 ## Install & configure
 
