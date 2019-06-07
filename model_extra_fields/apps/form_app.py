@@ -24,6 +24,14 @@ class FormEditApp(ModelFormWidget):
         else:
             return default
 
+    def autocomplete_search(self, queryset, keyword, control):
+
+        if control==self.content_type:
+            return queryset.filter(model__icontains=keyword)
+
+        return super().autocomplete_search(queryset, keyword, control)
+
+
 
 class FormApp(ModelAdminWidget):
 
