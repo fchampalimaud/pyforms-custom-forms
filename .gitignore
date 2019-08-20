@@ -2,3 +2,7 @@
 django_custom_pyforms_forms\.egg-info/
 
 *.pyc
+
+build/
+
+dist/
