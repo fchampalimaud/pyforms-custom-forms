@@ -5,22 +5,29 @@
 
 __author__ = "Ricardo Ribeiro"
 __credits__ = "Ricardo Ribeiro"
-__license__ = "MIT"
-__version__ = "0.0"
 __maintainer__ = ["Ricardo Ribeiro"]
 __email__ = ["ricardojvr@gmail.com"]
 __status__ = "Development"
 
-from setuptools import setup, find_packages
+import re
+from setuptools import setup
+
+version, license = None, None
+with open('model_extra_fields/__init__.py', 'r') as fd:
+    content = fd.read()
+    version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', content, re.MULTILINE).group(1)
+    license = re.search(r'^__license__\s*=\s*[\'"]([^\'"]*)[\'"]', content, re.MULTILINE).group(1)
+if not version: raise RuntimeError('Cannot find version information')
+if not license: raise RuntimeError('Cannot find license information')
 
 setup(
 
     name='django-custom-pyforms-forms',
-    version='0',
+    version=version,
     description="""""",
     author='Ricardo Ribeiro',
     author_email='ricardo.ribeiro@research.fchampalimaud.org',
-    license='MIT',
+    license=license,
     packages=['model_extra_fields'],
     include_package_data=True,
 )
