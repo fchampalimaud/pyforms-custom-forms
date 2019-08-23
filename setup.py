@@ -17,12 +17,12 @@ with open('model_extra_fields/__init__.py', 'r') as fd:
     content = fd.read()
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', content, re.MULTILINE).group(1)
     license = re.search(r'^__license__\s*=\s*[\'"]([^\'"]*)[\'"]', content, re.MULTILINE).group(1)
-if not version: raise RuntimeError('Cannot find version information')
-if not license: raise RuntimeError('Cannot find license information')
+if version is None: raise RuntimeError('Cannot find version information')
+if license is None: raise RuntimeError('Cannot find license information')
 
 setup(
-
     name='django-custom-pyforms-forms',
+    url='https://github.com/fchampalimaud/pyforms-custom-forms.git',
     version=version,
     description="""""",
     author='Ricardo Ribeiro',
